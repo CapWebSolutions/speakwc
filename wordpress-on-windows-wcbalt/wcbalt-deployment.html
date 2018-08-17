@@ -1,0 +1,86 @@
+<section>
+<h3>A Little Deployment Anyone?<br>Basic Assumptions</h3><hr>
+	<ul>
+	<li>New WordPress Installation Exists on Host</li>
+	<li>WP Migrate DB Pro Installed and Activated<br>on local and remote sites</li>
+	<ul><li>Migrate DB Pro handles handshake</li>
+	<li>Authenticates connection</li>
+	<li>Uploads DB to staging / live server</li>
+	<li>Performs Search & Replace on db</li></ul>
+	<li>Upload wp-content folder via FTP</li>
+	</ul>
+	<aside class="notes">
+	Again, emphasis on "little"
+	Focusing on local environment
+	WP Migrate DB PRO makes my life better.
+	Free works. Must jump into phpMyAdmin to import db</aside>
+</section>
+<section > 
+	<figure>
+	<img src="wordpress-on-windows-wcbalt/assets/images/magic-waving-of-hands.gif"/>
+	<figcaption>Waving of Hands<br>Magic Deployment Happens</figcaption>
+	</figure>
+</section>
+
+<section>
+<h2>Deployment Magic with<br>WP Migrate DB</h2><hr>
+<figure>
+<img src="wordpress-on-windows-wcbalt/assets/images/local-mdp-newconfig.png"/>
+<figcaption>Create New Migration Profile</figcaption>
+</figure>
+<aside class="notes"></aside>
+</section>
+
+<section>
+<hr>
+<figure>
+<img src="wordpress-on-windows-wcbalt/assets/images/local-mdp-enter-auth.png"/>
+<figcaption>Push Local db to Password Protected Remote</figcaption>
+</figure>
+<aside class="notes">We want to push our local db to the remote. Remote / staging or production site is currently PW protected so need to enter authentication for connection to succeed. We copy the URL & key from the DB Pro install on the remote.</aside>
+</section>
+
+<section>
+<hr>
+<figure>
+<img src="wordpress-on-windows-wcbalt/assets/images/local-mdp-connect-complete.png"/>
+<figcaption>Connect Successful. Search & Replace Set Automatically</figcaption>
+</figure>
+<aside class="notes">connection is complete. Authentication has been added. DB search & replace is shown. Find references to local dev and replace with remote/live site details.</aside>
+</section>
+
+<section>
+<hr>
+<figure>
+<img src="wordpress-on-windows-wcbalt/assets/images/migration-in-progress.png"/>
+<figcaption>Migration in Progress</figcaption>
+</figure>
+<aside class="notes">Tables being migrated.</aside>
+</section>
+
+<section>
+<hr>
+<figure>
+<img src="wordpress-on-windows-wcbalt/assets/images/migration-push-complete.png"/>
+<figcaption>Migration Completed</figcaption>
+</figure>
+<aside class="notes">Tables migrated.</aside>
+</section>
+
+<section>
+<h2>Dull FTP Upload of WP-CONTENT</h2><hr>
+	<ul>
+	<li>FileZilla</li>
+	<li>SFTP/FTP connection to remote site</li>
+	<li>Drag WP-CONTENT from local to remote</li></ul>
+	<p>Remainder of Git process<br>&nbsp;&nbsp;left as an exercise for the viewer ;-)</p>
+	<aside class="notes">The first upload will take some time, since plugins and media will be going. </aside>
+	</section>
+
+<section data-background-color="#73232F" data-background="wordpress-on-windows-wcbalt/assets/images/recycling_symbol.png">
+	<p>Sigh</p>
+	<p>Lather &middot; Rinse &middot; Repeat</p>
+	<aside class="notes">
+	</aside>
+</section>
+

@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Web Design SIG Session 1</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			<section data-background-color="#73232F">
+				<h2>Web Design SIG</h2><hr>
+				<p>Sept 2016 - June 2017</p>
+				<p>Welcome</p>
+				<p>SIG Leader: Matt Ryan</p>
+				<p style="font-size:smaller;">https://mattryan.co  | matt@mattryan.co</p>
+<aside class="notes">
+You'll notice something different going on. John's out there and I'm up here.
+Let's do this.
+</aside>
+			</section>
+				<section data-background-color="#73232F">
+				<h2>Who am I and why am I up here?</h2>
+				<hr>
+				<ul><li>40+ years in IT</li>
+				<ul><li>Beginning with software and now returning to it</li>
+				<li>Freelance web developer and business owner</li></ul>
+				<li>Emphasis on developer as opposed to designer</li>
+				<ul><li>Aren't we all a little bit of a designer</li></ul>
+				<li>Anxious to learn</li>
+				<ul><li>Ready to learn with someone</li></ul>
+				<li><strong>Asked and didn't say 'no' fast enough ?!?</strong></p></ul>
+<aside class="notes">
+Emphasis on developer, not design. My wife can vouch for that.
+As front end web devs we all need to have a little bit of a design eye.
+Always learning. Prefer to learn with others.
+Let's do this.
+</aside>
+			</section>
+
+			<section data-background-color="#73232F">
+				<h2>Initial Plan for SIG</h2><hr>
+				<ul><li>SIG =/= Class</li>
+				<li>Here to learn from each other</li>
+				<li>Become aware of different approaches</li>
+				<li>Discuss ideas</li>
+				<li>Offer feedback to each other</li></ul>
+<aside class="notes">
+I wanted to start with a back to basics approach to web design. Looking at a foundation and building up from there. I build web sites using WordPress and the Genesis framework. The framework enables me to work within a comfortable set of features so that basic dev is quick and flexible. From there I build up with the customizations needed.
+I thought that building on a CSS framework would be a benefit - since CSS is my challenge.
+</aside>
+			</section>
+				<section data-background-color="#73232F">
+				<h2>Intro to Bootstrap</h2><hr>
+				<ul><li>what it is</li>
+				<li>why use it</li>
+				<li>what can you do with it</li>
+				<li>where to get it</li>
+				<li>how to use it</li></ul>
+<aside class="notes">
+For the first few sessions, I would like us to talk about the Bootstrap framework. Learn a little about what it is and how to use it. Things we can do with it.
+To kick it off let's take a look at the what, where and how ...
+</aside>
+			</section>
+			<section data-background-color="#73232F">
+				<figure>
+				  <img src="webdes-bootstrap-intro/images/bootstrap-intro.png" alt="Bootstrap Introductory Page" width="960" height="485">
+				  <figcaption>Fig.1 - <a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com</a></figcaption>
+				</figure>
+<aside class="notes">
+Here's the splash screen for the get bootstrap website. Bootstrat is an open source project so there's no licensing costs to use it in your personal projects or commercail projects.
+
+It's described as a framework for HTML, CSS and javascript. I think the most important part of this is that it focuses on responsive web design.
+</aside>
+			</section>
+
+			<section data-background-color="#73232F">
+				<h2>Get it & Use It</h2><hr>
+				<ul><li>Link to CDN or Content delivery network</li></ul></ul>
+<pre><code>
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap
+/3.3.6/css/bootstrap.min.css"&gt;
+</code></pre>
+			</section>
+
+			<section data-background-color="#73232F">
+				<ul><li>Download and Store Locally - Your Own Copy</li>
+				<ul><li>Bootstrap files in your web server or local computer</li>
+<pre><code>
+&lt;link rel="stylesheet" href="css/reveal.css"&gt;
+</code></pre>
+				<li>Put bootstrap into same directory tree as your index.html</li></ul></ul>
+			</section>
+
+			<section data-background-color="#73232F">
+				<h2>Get Started</h2><hr>
+				<ul><li>Basic HTML - index.html</li></ul>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;title&gt;Jumbotron Template for Bootstrap&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1 class="display-class-3">Hello, WebDes SIG!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<a href="webdes-bootstrap-intro/jumbo1.html" target="_blank">Page In Progress - 1</a>
+    <aside class="notes">
+        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+    </aside>
+			</section>
+
+<section data-background-color="#73232F">
+<h2>Add Navigation Bar</h2><hr>
+<pre><code>
+&lt;nav class="navbar navbar-inverse navbar-fixed-top"&gt;
+	&lt;a class="navbar-brand" href="#"&gt;Project name&lt;/a&gt;
+	&lt;ul class="nav navbar-nav"&gt;
+		&lt;li class="nav-item active"&gt;
+		&lt;a class="nav-link" href="#"&gt;Home &lt;span class="sr-only"&gt;(current)&lt;/span&gt;&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class="nav-item"&gt;
+		&lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class="nav-item"&gt;
+		&lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<a href="webdes-bootstrap-intro/jumbo2.html" target="_blank">Page In Progress - 2</a>
+<aside class="notes">
+Navigation classes ...
+</aside>
+</section>
+
+<section data-background-color="#73232F">
+<h2>Message | Jumbotron | Button</h2><hr>
+<ul><li>Add main container</li>
+<li>Add content</li>
+<li>Add call to action, aka button</li></ul>
+<pre><code>
+    &lt;div class="jumbotron"&gt;
+      &lt;div class="container"&gt;
+        &lt;h1 class="display-3"&gt;Hello, WebDes SIG!&lt;/h1&gt;
+        &lt;p&gt;This is a template for a simple marketing or informational website.
+        It includes a large callout called a jumbotron and three supporting pieces
+        of content. Use it as a starting point to create something more unique.&lt;/p&gt;
+        &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="#"
+        role="button"&gt;Learn more &raquo;&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<a href="webdes-bootstrap-intro/jumbo3.html" target="_blank">Page In Progress - 3</a>
+<aside class="notes">
+Container with content and call to action / button
+</aside>
+</section>
+
+<section data-background-color="#73232F">
+<h2>Add Featured Content</h2><hr>
+<ul><li>Add container</li>
+<li>Add row element</li>
+<li>Add content and button</li></ul>
+<pre><code>
+&lt;div class="container"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-md-4"&gt;
+			&lt;h2&gt;Heading&lt;/h2&gt;
+			&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+			tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+			massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+			Donec sed odio dui. &lt;/p&gt;
+			&lt;p&gt;&lt;a class="btn btn-secondary" href="#" role="button"&gt;View details &raquo;&lt;/a&gt;&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<a href="webdes-bootstrap-intro/jumbo4.html" target="_blank">Page In Progress - 4</a>
+<aside class="notes">
+Featured content / more details ...
+Intro to Bootstrap grid layout ...
+click over to grid example
+</aside>
+</section>
+
+<section data-background-color="#73232F">
+<h2>Rest of Content Row</h2><hr>
+<pre><code>
+&lt;div class="col-md-4"&gt;
+	&lt;h2&gt;Heading 2&lt;/h2&gt;
+	&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+	tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+	massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+	Donec sed odio dui. &lt;/p&gt;
+	&lt;p&gt;&lt;a class="btn btn-secondary" href="#" role="button"&gt;View details &raquo;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="col-md-4"&gt;
+	&lt;h2&gt;Heading 3&lt;/h2&gt;
+	&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+	tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+	massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+	Donec sed odio dui. &lt;/p&gt;
+	&lt;p&gt;&lt;a class="btn btn-secondary" href="#" role="button"&gt;View details &raquo;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<a href="webdes-bootstrap-intro/jumbo5.html" target="_blank">Page In Progress - 5</a>
+<aside class="notes">
+Building out the row using Bootstrap grid layout ...
+3 equal columns
+Let's do a quick switch to use a larger center container
+Jump to grid for example
+Go edit jumbo5
+</aside>
+</section>
+
+<section data-background-color="#73232F">
+<h2>Wrap It Up</h2><hr>
+<pre><code>
+&lt;hr&gt;
+&lt;footer&gt;
+	&lt;p&gt;&copy; PACS Ltd. 2016&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+<a href="webdes-bootstrap-intro/jumbo6.html" target="_blank">Page Done</a>
+<aside class="notes">
+Add in a footer and copyright line to round out the page.
+</aside>
+</section>
+
+				<section data-background-color="#73232F">
+				<h2>Knock Your Socks Off Resources</h2><hr>
+				<p>
+				<a href="https://www.codeofaninja.com/2014/05/
+				bootstrap-tutorial-beginners-step-step.html" target="_blank">codeofaninja.com/2014/05/
+				bootstrap-tutorial-beginners-step-step.html</a></p>
+				<p><a href="https://www.taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/"  target="_blank">taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/</a></p>
+				<aside class="notes">
+				These are a couple of excellent resources to dig in deeper into bootstrap
+				I'll post these links, a few other tutorials and the sample files and provide links to them in the wrap up email I send out next week.
+				</aside>
+				</section>
+
+				<section data-background-color="#73232F">
+				<h2>Next Time We Get Together</h2><hr>
+				<p>Look at grid system</p>
+				<P>Check out responsiveness</P>
+				<aside class="notes">
+				Next month we'll dig into the grid layout a little more and play with the responsiveness
+				If there's something in particular you'd like to discuss let me know.
+				</aside>
+				</section>
+
+				<section data-background-color="#73232F">
+				<h2>Lingering Thoughts</h2><hr>
+				<br>anyone?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;anyone?
+				<aside class="notes">
+				. . . a little Ferris Bueller reference never hurts in closing
+				</aside>
+				</section>
+				<section data-background="#73232F">
+				<h2>Thanks!</h2>
+				<hr>
+				<p>Matt Ryan<br><br>
+				<a href="https://mattryan.co" target="_blank">https://mattryan.co</a> &middot; matt@mattryan.co || <a href="https://twitter.com/mattry" target="_blank">@MattRy</a></p>
+				</section>
+			<section data-background-color="#73232F">
+				<h2>Technology Setup</h2><hr>
+				<ul><li>Windows 10 laptop</li>
+				<li>Desktop Server for Windows</li>
+				<ul><li>Provides local web server, Apache, MySql, PHP</li></ul>
+				<li>reveal.js for web based presentation (running locally)</li>
+				<li>Sublime Text 3 as text editor</li>
+				</ul>
+				<aside class="notes">
+
+				</aside>
+			</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+    			controls: false,    // Display controls in the bottom right corner
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

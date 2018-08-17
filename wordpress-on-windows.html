@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Windows WordPress Development</title>
+
+		<meta name="description" content="Yes - you really can build a WordPress development environment on Windows">
+		<meta name="author" content="Matt Ryan">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="wordpress-on-windows/images/windows_xp_logo.jpg">
+				<h2 style="color:#000;">You Can Set Up A</h2>
+				<h1 style="color:#000;">WordPress Dev Environment</h1>
+				<h3 style="color:#000;">on</h3>
+				<h1 style="color:#000;">Windows</h1>
+<!-- <div style="text-align:right;font-size:16px;color:#000;"><br><br><br>Lehigh Valley WordPress Meetup<br>Oct 13, 2016</div> -->
+				<aside class="notes">
+					Not a familiar topic at WordPress gatherings.
+					Im here to let you know that It IS possible.
+				</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>Who am I and why am I up here?</h2>
+				<hr>
+				<ul><li>40+ years in IT</li>
+				<li>Beginning with software and now returning to it</li>
+				<li>Freelance web developer and business owner</li>
+				<li>Started with Microsoft -<br>
+				&nbsp;&nbsp;Why change now?</li></ul>
+				<aside class="notes">
+				Before we get much further, please allow me to offer a little background on myself. I did work with initial versions of DOS/MS-DOS. Windows 3.1 so I come by this Windows affinity quite naturally.
+				</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>You may be familiar with ...</h2><hr>
+  				<audio data-autoplay src="wordpress-on-windows/images/microsoft-windows-95-startup-sound.mp3"></audio>
+  				<p class="fragment" data-autoslide="5000"></p>
+				<figure>
+				  <img src="wordpress-on-windows/images/ms_bsod_2-sml.jpg">
+				  <figcaption>Windows BSOD circa Win XP</figcaption>
+				</figure>
+				<aside class="notes">
+				May have seen this in a previous life.
+				Despite the ever present Windows BSOD, it really does work as a dev environment.
+				I'm going to show you that you really can set up ...
+				</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>Goal for Session</h2><hr>
+				<ul>
+				<li>Create environment on a Windows 10 box that</li>
+				<ul>
+				<li>Offers familiar Windows UI</li>
+				<li>Robust toolset</li>
+				<li>Duplicatable</li>
+				<li>Low cost</li></ul>
+				<li> Includes features such as:</li>
+				<ul><li>Local build & testing </li>
+				<li>Smart file editing</li>
+				<li>FTP connection to hosting server</li>
+				<li>Deployment</ul>
+				</ul>
+				<aside class="notes">
+				Here is what I'm hoping to go over with you tonight.
+				</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>This is What I Have in Mind</h2><hr>
+				<ul><li>DesktopServer</li>
+				<li>Sublime Text 3</li>
+				<li>FileZilla FTP Client</li>
+				<li>SourceTree GUI Git Interface</li>
+				<li>WP Migrate DB Pro painfree migration</li>
+				<li>Bitbucket Distributed Version Control / Backup</li>
+				</section>
+				<section data-background="#73232F">
+				<h2>This is What I Have in Mind</h2><hr>
+					<figure>
+					<img src="wordpress-on-windows/images/capture-tool-matrix.png"/>
+					<figcaption>Tools In Use</figcaption>
+					</figure>
+				<aside class="notes">
+				To put it more specifically, the workflow include local storage structure, full site local testing with smart editing tools, version control, easy file + db upload and finally deployment/upload to public interwebs with minimal headaches
+				</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>Let's Jump In</h2><hr>
+					<p style="text-align:left;">Note to self:<p>
+					<p>Talk about the tools</p>
+					<aside class="notes">
+					A reminder for me to get down to specifics.....
+					</aside>
+				</section>
+
+				<Section data-background="#73232F">
+					<h4> My LAMP Stack</h4>
+					<figure>
+					  <img src="wordpress-on-windows/images/capture-serverpress.png">
+					  <figcaption>DesktopServer</figcaption>
+					</figure>
+					<aside class="notes">
+					The primary tool in my dev is Desktopserver from ServerPress. This is what works for me running on my Win10 laptop with 4 GB RAM. You can get up and running for free to work on your one or two sites
+					Premium adds some new tool automations and support for unlimited development websites.
+					</aside>
+				</Section>
+
+				<section data-background="#73232F">
+				<h2>Editor Preference</h2><hr>
+					<ul><li>
+					Sublime Text 3 - Eval Free / Buy $70</li>
+					<a href="https://www.sublimetext.com/" target="_blank"><img src="wordpress-on-windows/images/capture-sublimetextscreen.png"/></a>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>FTP Client - Really?</h2><hr>
+					<ul><li>Yes - I insist!</li>
+					<li>FileZilla - Just get it</li>
+					<li>No editing files using the dashboard editor</li></ul>
+					<a href="https://filezilla-project.org/" target="_blank"><img src="wordpress-on-windows/images/capture-filezilla.png"/></a>
+					<aside class="notes">
+					You need to learn to use this tool. There are lots of options for FTP clients. Commodity tool. Open source is good.
+					Repeat after me - I will not edit files through the WordPress dashboard. I will edit them in my code editor and then save them to my website.
+					</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>DesktopServer</h2><hr>
+					<!-- <section> -->
+					<ul><li>"Buy" Free Version</li>
+					<li>Download & Install</li>
+					<li>Windows Installs to c:\xampplite </li></ul>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>Setup DesktopServer</h2><hr>
+					<figure>
+					<img src="wordpress-on-windows/images/capture-desktopserver-install.png" width="268" height="447" />
+					<figcaption>C:\xampplite folder</figcaption>
+					</figure>
+					<aside class="notes">
+					Not going to go thorugh the DTSVR install. Its a typical Windows install. When running, you need to Run As Administrator. End up with a c:\xampplite folder. Not changeable. Find your WAMP stack in here. Apache. MySQL. PHP 5.5.24
+					</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>Build First Site - WordPress 5 Minute Install</h2><hr>
+				<ul>
+				<li>Start DesktopServer</li>
+				<li>Create Shortcut => c:\xampplite\DesktopServer.exe</li>
+				<li>Run as Administrator</li>
+				<li>Port 80 Conflict => Skype?</li>
+				</ul>
+				<aside class="notes">
+				Suggest you create a destkop shortcut to the executable, so reduce the need to search. In shortcut properties, select "Run as administrator".
+				Occasionally you will see a White Screen on the DTSVR display. It uses port 80 for the local lan. Latest versions of Skype grab this port for inbound comm. Skype can be configured to use an alternative port.
+				</aside>
+				</section>
+				<!-- </section> -->
+
+				<section data-background="#73232F">
+				<!-- <section> -->
+				<figure>
+				<img src="wordpress-on-windows/images/capture-1createssite.png"/>
+				<figcaption>DesktopServer - Create a New Dev Site</figcaption>
+				</figure>
+				</section>
+
+<!-- 				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-2createsitedetails.png"/>
+				<figcaption>DesktopServer - Startup Screen - example.dev</figcaption>
+				</figure>
+				</section> -->
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-3createsitedetails-specificsite.png"/>
+				<figcaption>DesktopServer - Set Up Details</figcaption>
+				</figure>
+				<aside class="notes">Enter name of my new site and use default location or browse to a new one. </aside>
+				</section>
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-4createsite-done.png"/>
+				<figcaption>DesktopServer - Folder Structure & db Created<br>Restart Web Services to Read New Site Information</figcaption>
+				</figure>
+				</section>
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-5createsite-installwp.png"/>
+				<figcaption>DesktopServer - Config Done<br>Admin Time</figcaption>
+				</figure>
+				</section>
+
+<!-- 				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-6createsite-finishwpinstall.png"/>
+				<figcaption>Browser Launch of New WordPress Admin</figcaption>
+				</figure>
+				</section> -->
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-7createsite-finishwpinstalldetails.png"/>
+				<figcaption>Add New WordPress Website Details</figcaption>
+				</figure>
+				</section>
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-8createsite-installed.png"/>
+				<figcaption>WordPress 5 Minute Install Completes</figcaption>
+				</figure>
+				</section>
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-9createsitedetails-login-bypass.png"/>
+				<figcaption>Website Login with DKTPSVR Bypass Login Plugin</figcaption>
+				</figure>
+				<aside class="notes">Awesome plugin included with DTSVR. Bypass login so I don't have to remember my Dev passwords or even bother storing them in my password manager.</aside>
+				</section>
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-91createsite-tada-dashboard.png"/>
+				<figcaption>WordPress Dashboard //meetup-tester.dev/wp-admin</figcaption>
+				</figure>
+				</section>
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-92createsite-tada-frontendview.png"/>
+				<figcaption>New WordPress site - Front End View</figcaption>
+				</figure>
+				</section>
+
+				<section data-background="#73232F"><figure>
+				<img src="wordpress-on-windows/images/capture-windows-wordpress-folder-structure.png"/>
+				<figcaption>Windows View of Your New Website</figcaption>
+				</figure>
+				</section>
+				<!-- </section> -->
+
+				<section  data-background="#73232F">
+				<h2>Code Editing / Development</h2><hr>
+					<ul><li>Open Local Project Folder in Sublime Text</li>
+					<li>Save Sublime Project</li>
+					<li>Edit PHP and CSS as needed - Save</li>
+					<li>Create files as needed - Save</li>
+					<li>PHP aware - syntax highlighting</li>
+					</ul>
+					</section>
+
+					<section data-background="#73232F">
+					<figure><img src="wordpress-on-windows/images/capture-sublimetextscreen.png"/>
+					<figcaption>This is what we're talking about</figcaption>
+					</figure>
+					</section>
+
+				<section data-background="#73232F">
+				<figure>
+					<img src="wordpress-on-windows/images/capture-sublime01-open-folder.png"/>
+					<figcaption>Open your website project folder from disk</figcaption>
+					</figure>
+					<aside class="notes">Pulling in the entire folder tree offers availability to access all files, even if you have no need to edit them. I find it very helpful when searching for WordPress hooks using the "find in open folders" search.</aside>
+					</section>
+
+				<section data-background="#73232F"><figure>
+					<img src="wordpress-on-windows/images/capture-sublime02-select-folder.png"/>
+					<figcaption>Browse to folder in local directory tree</figcaption>
+					</figure>
+					</section>
+
+				<section data-background="#73232F"><figure>
+					<img src="wordpress-on-windows/images/capture-sublime03-complete-files-access.png"/>
+					<figcaption>Complete access to project files</figcaption>
+					</figure>
+					<aside class="notes">
+					Edit any of the php, css or JS files in your project. create new directories and files. Build your entire customization layout right from the editor side panel.</aside>
+					</section>
+
+				<section data-background="#73232F"><figure>
+					<img src="wordpress-on-windows/images/capture-sublime-editing-local-functions.php.png"/>
+					<figcaption>Local editing functions.php</figcaption>
+					</figure>
+					<aside class="notes">
+					Editing functison.php to add that perfect snippet you found online.
+					The astute student will notice that the functiosn.php file I'm editing is from the Genesis Sample Theme - but Matt - Genesis wasn't installed. I know, screen captures out of order. Cut me some slack.
+					</aside>
+					</section>
+
+				<section data-background="#73232F">Test Changes<hr>
+					<ul><li>Save files!</li>
+					<li>Switch to Browser</li>
+					<li>Refresh</li>
+					<li>Repeat ad nauseam</li>
+					</ul>
+					<aside class="notes">
+					Beauty of local dev means no file transfers to remote host.
+					Editing live in your dev environment.
+					Refresh browser to see success
+					lather-rinse-repeat
+					</aside>
+					</section>
+
+
+				<section data-background="#73232F">
+				<h2>A Little Deployment Anyone? Basic Assumptions</h2><hr>
+					<ul>
+					<li>New WordPress Installation Exists on Host</li>
+					<li>Plugin WP Migrate DB Pro Installed and Activated<br>on local and remote sites</li>
+					<ul><li>Migrate DB Pro handles the handshake between installations</li>
+					<li>Authenticates connection</li>
+					<li>Uploads DB to remote server</li>
+					<li>Performs Search & Replace on db table entries</li></ul>
+					<li>Connect to remote site via FTP</li>
+					<ul><li>Upload wp-content folder</li></ul>
+					</ul>
+					<aside class="notes">
+					Again, emphasis on "little"
+					Focusing on local environment
+					WP Migrate DB PRO makes my life better.
+					Free works. Must jump into phpMyAdmin to import db</aside>
+				</section>
+				<section  data-background="#73232F">
+					<figure>
+					<img src="wordpress-on-windows/images/magic-waving-of-hands.gif"/>
+					<figcaption>Waving of Hands<br>Magic Deployment Happens</figcaption>
+					</figure>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>Deployment Magic with<br>WP Migrate DB</h2><hr>
+				<figure>
+				<img src="wordpress-on-windows/images/local-mdp-newconfig.png"/>
+				<figcaption>Create New Migration Profile</figcaption>
+				</figure>
+				<aside class="notes"></aside>
+				</section>
+
+				<section data-background="#73232F">
+				<hr>
+				<figure>
+				<img src="wordpress-on-windows/images/local-mdp-enter-auth.png"/>
+				<figcaption>Push Local db to Password Protected Remote</figcaption>
+				</figure>
+				<aside class="notes">We want to push our local db to the remote. Remote / staging or production site is currently PW protected so need to enter authentication for connection to succeed. We copy the URL & key from the DB Pro install on the remote.</aside>
+				</section>
+
+<!-- 				<section data-background="#73232F">
+				<hr>
+				<figure>
+				<img src="wordpress-on-windows/images/local-mdp-connect-to-remote.png"/>
+				<figcaption>...</figcaption>
+				</figure>
+				<aside class="notes"></aside>
+				</section> -->
+
+				<section data-background="#73232F">
+				<hr>
+				<figure>
+				<img src="wordpress-on-windows/images/local-mdp-connect-complete.png"/>
+				<figcaption>Connect Successful. Search & Replace Set Automatically</figcaption>
+				</figure>
+				<aside class="notes">connection is complete. Authentication has been added. DB search & replace is shown. Find references to local dev and replace with remote/live site details.</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<hr>
+				<figure>
+				<img src="wordpress-on-windows/images/migration-in-progress.png"/>
+				<figcaption>Migration in Progress</figcaption>
+				</figure>
+				<aside class="notes">Tables being migrated.</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<hr>
+				<figure>
+				<img src="wordpress-on-windows/images/migration-push-complete.png"/>
+				<figcaption>Migration Completed</figcaption>
+				</figure>
+				<aside class="notes">Tables migrated.</aside>
+				</section>
+
+				<section data-background="#73232F">
+				<h2>Dull FTP Upload of WP-CONTENT</h2><hr>
+					<ul>
+					<li>FileZilla</li>
+					<li>SFTP/FTP connection to remote site</li>
+					<li>Drag WP-CONTENT from local to remote</li></ul>
+					<p>Remainder of Git process<br>&nbsp;&nbsp;left as an exercise for the viewer ;-)</p>
+					<aside class="notes">The first upload will take some time, since plugins and media will be going. </aside>
+					</section>
+
+				<section data-background-color="#73232F" data-background="wordpress-on-windows/images/recycling_symbol.png">
+					<p>Sigh</p>
+					<p>Lather &middot; Rinse &middot; Repeat</p>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<section data-background="#73232F">
+				<h2>Time For A Little Control</h2><hr>
+					<ul>
+					<li>SourceTree</li>
+					<li>Create a local repository</li>
+					<li>Add your project folder</li></ul>
+					<p>Remainder of Git process<br>&nbsp;&nbsp;left as an exercise for the viewer ;-)</p>
+					<aside class="notes">Emphasis on "little"
+					Recent Git discussion - no need to revert
+					Go through SourceTree setup</aside>
+					</section>
+
+					<section data-background="#73232F">
+						<figure>
+						<img src="wordpress-on-windows/images/capture-sourcetree-01-before-new-project.png"/>
+						<figcaption>SourceTree - After Windows Install</figcaption>
+						</figure>
+						</section>
+
+					<section data-background="#73232F">
+						<figure>
+						<img src="wordpress-on-windows/images/capture-sourcetree-04-create-repo.png"/>
+						<figcaption>SourceTree - create New (Local) Repository </figcaption>
+						</figure>
+						</section>
+
+					<section data-background="#73232F">
+						<figure>
+						<img src="wordpress-on-windows/images/capture-sourcetree-05-ta-da-success-new-repo.png"/>
+						<figcaption>SourceTree - Success</figcaption>
+						</figure>
+						</section>
+
+					<section data-background="#73232F">
+						<figure>
+						<img src="wordpress-on-windows/images/capture-sourcetree-06-local-repo-contents.png"/>
+						<figcaption>SourceTree - Project Repo on Left - Folder Detail on Right<br>Ready for staging</figcaption>
+						</figure>
+						</section>
+
+					<section data-background="#73232F">
+						<figure>
+						<img src="wordpress-on-windows/images/capture-bitbucket.png"/>
+						<figcaption>Bitbucket Showing Repo w/Initial Commit</figcaption>
+						</figure>
+						</section>
+
+				<section data-background-color="#73232F">
+					<h2>Lingering Thoughts</h2><hr>
+					<br>anyone?<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;anyone?
+					<aside class="notes">
+					. . . a little Ferris Bueller reference never hurts in closing
+					</aside>
+				</section>
+
+				<section data-background="#73232F">
+					<h2>Thanks!</h2>
+					<hr>
+					<p><a href="https://mattryan.co" target="_blank">https://mattryan.co</a> &middot; matt@mattryan.co &middot; @MattRy</p>
+					<figure><img src="wordpress-on-windows/images/me-sketched-02.28.16-small.jpg"/></figure>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+    			controls: false,    // Display controls in the bottom right corner
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

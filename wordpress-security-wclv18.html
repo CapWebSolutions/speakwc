@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>WordPress Security: More than a Green Padlock!</title>
+
+	<meta name="description" content="WordPress Security: More than a Green Padlock!">
+	<meta name="author" content="Matt Ryan">
+ 
+	<meta property="og:title" content="You have your SSL certificate and the green padlock in the address bar. You're done. Your website is secure. Right? No? Take a walk past the Let's Encrypt cloak of security and see what you really need to do to help secure your website from the dangers of the public interwebs." />
+	<meta property="og:url" content="https://capwebsolutions.com/presentations/wordpress-security-wclv18/" />
+	<meta property="og:image" content="https://capwebsolutions.com/presentations/images/placeholder.png" />
+	<meta property="og:type" content="website" />
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+		if( window.location.search.match( /print-pdf/gi ) ) {
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'css/print/pdf.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		}
+	</script>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/white.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/sky.css"> -->
+	<link rel="stylesheet" href="css/theme/night.css">
+	<!-- <link rel="stylesheet" href="css/theme/serif.css">	 -->
+	<!-- <link rel="stylesheet" href="css/theme/simple.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/solarized.css"> -->
+
+	<link rel="stylesheet" href="wordpress-security-wclv18/assets/css/style.css">
+
+	
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<style>
+	body {
+		/* background-color: #027F3D; */
+		/* background-color: #4da577; */
+		background-color: #67b28a;
+	}
+	section {
+		data-state: "dimbg";
+	}
+	</style>
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section data-external="wordpress-security-wclv18/01-intro.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/02-bio.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/03-ssl.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/04-basic-security.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/05-plugin-security.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/06-plugin-backup.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/07-level-201-security.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/08-privilege-escalation.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/09-lock-down-login.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/20-overlooked-security-areas.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/21-pull-it-together.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/30-resources-attributions.html" data-state="dimbg" data-transition="linear"> </section>
+		<section data-external="wordpress-security-wclv18/40-signoff.html" data-state="dimbg" data-transition="linear"> </section>
+	</div> <!-- slides div -->
+</div> <!-- reveal div -->
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+	Reveal.initialize({
+		width: 960,
+		height: 700,
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		theme: Reveal.getQueryHash().theme || 'moon', // available themes are in /css/theme
+		// transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+		transition: 'concave',
+		transitionSpeed: 'slow',
+
+		// Optional libraries used to extend on reveal.js
+		dependencies: [
+			{ src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
+			// { src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } },
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+		]
+	});
+	
+	Reveal.configure({
+		keyboard: {
+			'&#8593': 'back',
+			13: 'down', // go to the down slide when the ENTER key is pressed
+			32: null, // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+			40: 'next', // go to the next slide when the ENTER key is pressed
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+html,
+body {
+	height:100%;
+	margin:0;
+	padding:0
+}
+
+html.dimbg .slide-background {
+	opacity: 0.4 !important;
+}
+
+.two-col-wrapper .two-col-left {
+	float: left;
+	width: 60%;
+  }
+  
+.two-col-wrapper .two-col-right {
+float: right;
+width: 40%;
+}
+
+.two-col-wrapper .smaller,
+.smaller {
+font-size: 16px;
+}
+
+
+
+.alignright {
+	text-align: right;
+	padding-right: 5px;
+}
+
+section.h2 {
+	border-bottom: 1px blue solid;
+}
+
+.reveal .slides section img.cws-logo {
+	/* background: none; */
+	border: none;
+}
+
+body > div.reveal.concave.center.has-vertical-slides.has-horizontal-slides.ready > div.slides {
+	width: 1100px;
+}
+
+/*********************************************
+ * Night theme HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+margin: 0 0 20px 0;
+color: #eee;
+font-family: "Montserrat", Impact, sans-serif;
+font-weight: normal;
+line-height: 1.2;
+letter-spacing: -0.03em;
+text-transform: none;
+text-shadow: none;
+word-wrap: break-word; }
+
+.reveal h1 {
+font-size: 2.2em; }
+
+.reveal h2 {
+font-size: 1.6em;
+border-bottom: 1px orange solid;
+}
+
+.reveal h3 {
+font-size: 1.55em; }
+
+.reveal h4 {
+font-size: 1em; }
+
+.reveal h1 {
+text-shadow: none; }

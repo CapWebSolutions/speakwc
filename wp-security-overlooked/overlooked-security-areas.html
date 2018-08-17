@@ -1,0 +1,78 @@
+<section data-background="wp-security-overlooked/assets/images/green-fence-with-lock.jpg"  data-state="dimbg two-col-wrapper">
+	<h3>3 Overlooked WordPress Security Areas</h3>
+	<ul>
+		<li>Know What's Going On</li>
+		<li>File Editing From Dashboard</li>
+		<li>File Permissions</li>
+	</ul>
+	<aside class="notes">
+		These are not things that are going to stop the hacker world at your doorstop. But, they are a few items you can add to your other website secruity tools. 
+		1st - know what stuff is going on in your website- whats changeing, adding deleteing, etc. even if you are the only one doing it. 
+		2nd - turn off the darn file editor that is available in the wp dashboard. Its dangerous. 
+		3rd - make sure your file permissions are correct. Its too easy to have a blanket 777 across everything to get you out of a fix. 
+	</aside>
+</section>
+
+<section data-background="wp-security-overlooked/assets/images/green-fence-with-lock.jpg"  data-state="dimbg two-col-wrapper">
+	<h3>What is Going On In My Site?</h3>
+	<div class="two-col-right"> 
+		<p>Keep An Audit Log<br>WP Security Audit Log</p>	
+	</div>
+	<div class='two-col-left'>
+		<figure>
+			<img src="wp-security-overlooked/assets/images/screenshot-wp-security-audit-log.png"/>
+		</figure>
+	</div>
+	<aside class="notes">
+		Do you know what is going on with your site? I mean REALLY know what is going on. 
+		To really know what is going on - keep an audit trail. I like this plugin. Allows you to set amount of time to keep or number of events. Even offers file change alerts and tests. Alerts. 
+	</aside>
+</section>
+
+<section data-background="wp-security-overlooked/assets/images/green-fence-with-lock.jpg"  data-state="dimbg two-col-wrapper">
+	<h3>Prevent File Editing From Dashboard</h3>
+	<div class='two-col-right'>
+		<figure>
+			<img src="wp-security-overlooked/assets/images/wordpress-admin-no-editing.png"/>
+		</figure>
+	</div>
+	<div class="two-col-left"> 
+		<ul>
+			<li>wp-config.php tweak</li>
+		</ul>	
+	</div>
+	<p style="text-align:center;">define('DISALLOW_FILE_EDIT',true);<br>/* That's all, stop editing! */</p>
+	<aside class="notes">
+Do this for your own sites. For your customer sites. For your friend's site. You don't want to be tempted AND you don't want to accidently show someone else how to do this. 
+	</aside>
+</section>
+
+<section data-background="wp-security-overlooked/assets/images/green-fence-with-lock.jpg"  data-state="dimbg two-col-wrapper">
+	<h3>File Permissions</h3>
+		<div class='two-col-left'>
+				<figure>
+					<img src="wp-security-overlooked/assets/images/ftp-file-permissions.png"/>
+				</figure>
+		</div>
+		<div class="two-col-right"> 
+				<p>Correct permission scheme</p>
+				<ul>
+					<li>Folders –> 755</li>
+					<li>Files –> 644</li>
+				</ul>	
+		</div>
+		<aside class="notes">
+		If your files don’t have the best possible permissions in place, it’s easier for hackers to intrude on your files and your site. Setting your file permissions correctly may not save you from all attacks, but it will help make your site a bit more secure, making it a great addition to your current security measures.
+		</aside>
+</section>
+
+<section data-background="wp-security-overlooked/assets/images/green-fence-with-lock.jpg"  data-state="dimbg">
+	<h3>File Permissions EXPLODED</h3>
+	<figure>
+		<img src="wp-security-overlooked/assets/images/wp-file-permission-644.png"/>
+	</figure>
+	<aside class="notes">
+lets explode those permissions real quick. Here's a macro view of what 644 looks like.
+755 is left as an exercise for the interested viewer
+	</aside>
+</section>

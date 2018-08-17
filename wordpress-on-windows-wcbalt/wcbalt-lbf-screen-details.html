@@ -1,0 +1,169 @@
+<section data-state="two-col-wrapper">
+	<h2>Local By Flywheel (LBF)</h2><hr>
+	<div class='two-col-left'>
+	<figure>
+			<img src="wordpress-on-windows-wcbalt/assets/images/local_getflywheel_com.png">
+	</figure>
+</div>
+<div class="two-col-right"> 
+	<ul>
+		<li>Free Download</li>
+		<li>Quick Windows Install</li>
+		<li>Uses .NET, VirtualBox, Docker</li>
+	</ul>
+</div>
+	<aside class="notes">
+		470MB download. Don't do it here.
+		Extra apps are installed if not already present on your system. 
+	</aside>
+</section>
+<section data-state="two-col-wrapper">
+	<h2>Setup Local By Flywheel</h2><hr>
+	<div class='two-col-right'>
+	<figure>
+	<img src="wordpress-on-windows-wcbalt/assets/images/vsc-setup-1.png" />
+	<figcaption>LBF Installer</figcaption>
+	</figure>
+	</div>
+	<div class="two-col-left">
+	<ul>
+		<li>Run Installer</li>
+		<li>Windows Installs to C:\Program Files\Microsoft VS Code for a 64-bit machine</li>
+		<li>.NET framework required</li>
+		<li>Visual Studio Code added to %PATH%</li>
+	</ul>
+	</div>
+	<aside class="notes">
+	Not going to go thorugh the LBF install. Its a typical Windows install.
+	Default install to c:\Users\<username>\Local Sites
+	Type Code at c: prompt to launch from command
+	</aside>
+</section>
+
+<section data-background-video="wordpress-on-windows-wcbalt/assets/images/wcbalt-lbf-add-site.mp4" data-background-color="#000">	
+</section>
+
+<section data-state="two-col-wrapper">
+	<h2>Build First Site</h2><hr>
+	<div class='two-col-right'>
+	<ul>
+		<li>Start LBF</li>
+		<li>Set Preferences</li>
+		<li>Starting Local Machine</li>
+		<li>Add A site</li>
+		<li>Start A site</li>
+	</ul>
+	</div>
+	<div class="two-col-left smaller">			
+	<figure>
+		<img src="wordpress-on-windows-wcbalt/assets/images/lbf-starting-local-machine.png"/>
+		<figcaption>Local by Flywheel - Starting LBF, VirtualBox, Docker</figcaption>
+	</figure>
+</div>
+</section>
+<section data-state="two-col-wrapper">
+		<h2>Local Management Panel</h2><hr>
+		<div class='two-col-right'>
+		<ul>
+			<li>List Existing Sites</li>
+			<li>Set Preferences</li>
+			<li>Add A site</li>
+			<li>Start A site</li>
+		</ul>
+		</div>
+		<div class="two-col-left">
+		<img src="wordpress-on-windows-wcbalt/assets/images/lbf-add-a-site.png"/>
+	<aside class="notes">
+		Behind the scenes LBF is running on Oracle VM VirtualBox with Docker as the container manager. Nothing special about the bundled version of Virtualbox. If you are already running it, it will not be reinstalled. 
+	</aside>
+</section>
+
+<section data-state="two-col-wrapper">
+		<h2>Adding a New WordPress Site</h2><hr>
+		<div class='two-col-right'>
+		<ul>
+			<li>Set Site Name</li>
+			<li>Set Preferences</li>
+			<li>Provision</li>
+			<li>Download WordPress</li>
+			<li>Install WordPress</li>
+			<li>Site Ready</li>
+		</ul>
+		</div>
+		<div class='two-col-left'>
+			<img src="wordpress-on-windows-wcbalt/assets/images/lbf-set-name-options.png"/>
+		</div>
+</section>
+<section data-state="two-col-wrapper">
+		<h3>Choose Environment</h3><hr>
+		<div class='two-col-left'>
+	<img src="wordpress-on-windows-wcbalt/assets/images/lbf-setup-preferred.png"/>
+	</div>
+	<div class='two-col-right'>
+			<ul>
+				<li>Preferred vs Custom</li>
+				<li>Set Preferences</li>
+				<li>Provision</li>
+				<li>Download</li>
+				<li>Install WordPress</li>
+				<li>Site Ready</li>
+			</ul>
+	</div>
+</section>
+	<section data-state="two-col-wrapper">
+			<h3>Setup Environment</h3><hr>
+			<div class='two-col-left'>
+		<img src="wordpress-on-windows-wcbalt/assets/images/lbf-setup-custom.png"/>
+	</div>
+	<div class='two-col-right'>
+			<ul>
+				<li>Custom Selections</li>
+				<ol style="list-style-type:square;">
+					<li>Set Preferences</li>
+					<li>PHP Version</li>
+					<li>Web Server Flavor</li>
+					<li>MySQL version</li>
+				</ol>
+			</ul>
+	</div>
+	<aside class="notes">
+		Discuss importance of environment selection and ability choose. Stay away from install directory. 
+		Other guy can't do this - Choose PHP
+	</aside>
+</section>
+<section data-state="two-col-wrapper">
+		<h3>LBF Admin Options</h3><hr>
+		<div class='two-col-left'>
+		<img src="wordpress-on-windows-wcbalt/assets/images/wcbalt-local-admin.png" />
+		</div>
+		<div class="two-col-right">
+			<ul>
+				<li>Admin / Front End</li>
+				<li>Database</li>
+				<li>SSL Cert</li>
+				<li>Mail Server Utility</li>
+				<li>Live Link for Client Sharing</li>
+			</ul>
+		</div>
+	<aside class="notes">@TODO Need to create a WP on Windows graphic</aside>
+</section>
+<section>
+	<h3>Local Site -> WordPress Dashboard</h3><hr>
+		<img src="wordpress-on-windows-wcbalt/assets/images/lbf-admin-view.png"/>
+</section>
+
+<section>
+	<h3>Local Site -> Front End View</h3><hr>		
+	<img src="wordpress-on-windows-wcbalt/assets/images/lbf-front-end-view.png"/>
+</section>
+
+<section data-state="two-col-wrapper">
+		<h3>WordPress on Windows</h3><hr>
+		<div class='two-col-left'>
+		<img src="wordpress-on-windows-wcbalt/assets/images/lbf-folder-structure.png" />
+		</div>
+		<div class="two-col-right">
+		<p>New WP Site folder structure</p>
+		</div>
+	<aside class="notes">@TODO Need to create a WP on Windows graphic</aside>
+</section>

@@ -1,0 +1,13 @@
+.two-col-wrapper .two-col-left {
+	float: left;
+	width: 60%;
+  }
+  
+.two-col-wrapper .two-col-right {
+	float: right;
+	width: 40%;
+  }
+  .two-col-wrapper .smaller,
+  .smaller {
+	font-size: 16px;
+  }
