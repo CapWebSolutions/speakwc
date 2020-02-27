@@ -1,0 +1,67 @@
+jQuery( function( $ ) {
+	var ajaxurl = window.ajaxurl || window._wpUtilSettings.ajax.url || '/wp-admin/admin-ajax.php';
+
+	$( function() {
+		p2_hovercardify();
+	} );
+
+	// When new posts are loaded, hovercardify them
+	$( document ).ajaxSuccess(function(e, xhr, settings){
+		if ( xhr.responseText.length > 0 && ( 'string' == typeof( xhr.responseText ) && -1 != xhr.responseText.indexOf( 'class' ) && -1 == xhr.responseText.indexOf( 'p2-hovercard' ) ) )
+			p2_hovercardify();
+	});
+
+	function p2_hovercardify() {
+		$.each( p2_hovercards_regex, function(i,v){
+			$('a[href*=".trac."]').not('.widget a, .p2_hovercardify > a').filter(function(){
+				var regex = new RegExp( v );
+				return regex.test( $(this).text() );
+			}).wrap('<span class="p2_hovercardify" />');
+		});
+
+		$('.p2_hovercardify').one('scrollin', function() {
+			// bail if the card is already loaded
+			if ( $(this).find('.p2-hovercard:first').length > 0 )
+				return;
+			if ( $(this).find('.nocard').length )
+				return;
+
+			// ajax request
+			p2_hovercards_requestCard( this );
+		});
+	}
+
+	function p2_hovercards_requestCard( object ) {
+		var $box = $(object),
+		    $a = $box.find('a:first');
+
+		// show spin.js spinner
+		var opts = {
+			lines: 9,
+			length: 0,
+			width: 2,
+			radius: 4,
+			left: 0,
+			zIndex: 1
+		};
+		$box.spin(opts);
+
+		var data = {
+			action: 'load_p2_hovercards',
+			slug: $a.text(),
+			url: $a.attr('href')
+		};
+
+		$.post(ajaxurl, data, function(r){
+			if ( 0 == r )
+				return;
+			$box.append(r);
+		}).success(function(r) {
+			// hide spinner
+			$box.spin( false );
+
+			if ( r.length == 0 || 0 == r )
+				$a.addClass('nocard');
+		});
+	}
+});
