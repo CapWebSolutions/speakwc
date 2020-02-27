@@ -1,0 +1,84 @@
+<section>
+	<h2>Common WordPress Problems</h2><hr>
+	<ul>
+		<li>White Screen of Death</li>
+		<li>Error Establishing a Database Connection</li>
+		<li>Maintenance Mode Forever</li>
+		<li>Internal server error</li>
+		<li>Syntax Error in WordPress</li>
+	</ul>
+	<aside class="notes">
+Here are a few of the most common issues with WP sites. How many of you have experienced these? We are going to talk about how to troubleshoot a few of these and get into some Q&A on others.
+	</aside>
+</section>
+
+
+<section data-state="two-col-wrapper">
+	<h3>White Screen of Death</h3><hr>
+	<div class="two-col-right" style="padding-top:10%;">
+		<ul>
+			<li>Memory Issues</li>
+			<li>Plugin / Theme Conflicts</li>
+		</ul>
+	</div>
+	<div class='two-col-left'>
+		<img src="wp101-ts-wcphilly17/assets/images/white-screen-of-death.jpg">
+	</div>
+	<aside class="notes"></aside>
+	</section>
+
+<section data-state="two-col-wrapper">
+	<h3>Error Establishing a Database Connection</h3><hr>
+	<div class="two-col-right">
+		<ul>
+			<li>Error talking to WP db</li>
+			<li>Login credentials</li>
+			<li>Db corrupt</li>
+			<li>MySQL issue on host</li>
+		</ul>
+	</div>
+	<div class='two-col-left'>
+		<img src="wp101-ts-wcphilly17/assets/images/db-connection-error.jpg">
+	</div>
+	<aside class="notes">
+		Check the wp-config.php file - verify db config is correct
+	</aside>
+</section>
+
+<section data-state="two-col-wrapper">
+	<h3>Syntax Error in WordPress</h3><hr>
+	<div class="two-col-right">
+		<ul>
+			<li>Pasted Code Snippet</li>
+			<li>Need FTP to fix</li>
+			<li>Remove repalce new code</li>
+		</ul>
+	</div>
+	<div class='two-col-left'>
+		<img src="wp101-ts-wcphilly17/assets/images/syntaxerror.png">
+	</div>
+	<aside class="notes">
+		Probably the result of a incorrectly pasted code snippet. Extra bracket, missing ;
+	</aside>
+</section>
+		
+<section data-state="two-col-wrapper">
+		<h3>HTTP 500 Internal Server Error</h3><hr>
+		<div class="two-col-right">
+			<ul>
+				<li>Not a WordPress issue</li>
+				<li>Corrupt .htaccess</li>
+				<li> . or PHP memory</li>
+				<li> . . or plugin conflict</li>
+				<li> . . . or . . . </li>
+			</ul>
+		</div>
+		<div class='two-col-left'>
+			<img src="wp101-ts-wcphilly17/assets/images/internalservererror.jpg">
+		</div>
+		<aside class="notes">
+			TS it by checking htaccess, deactivated all plugins, reuplaod WP core fileds, increase Php memory, check with hosting prvider about server error log entries
+		</aside>
+	</section>
+			
+	

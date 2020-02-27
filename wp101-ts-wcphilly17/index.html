@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Windows WordPress Development</title>
+
+	<meta name="description" content="WP101 - WordPress Troubleshooting">
+	<meta name="author" content="Matt Ryan">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="wordpress-on-windows-wcbalt/assets/css/style.css">
+	
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<style>
+	html.intro body {
+	background:url("wordpress-on-windows-wcbalt/assets/images/windows-10-logo.jpg");
+	background-position: center;
+	background-size: 75%;
+	}
+	html.intro h1,
+	html.intro h2,
+	html.intro h3 {
+		color:#000;
+	}
+	body {
+		background-color: #73232F;
+	}
+	</style>
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+ 
+<section data-external="wcphilly-intro.html"></section>
+
+<section data-external="wcphilly-bio.html"></section>
+
+
+<section>
+	<h3> My Local Development Environment</h3><hr>
+	<figure>
+		<img src="wordpress-on-windows-wcbalt/assets/images/local_getflywheel_com.png">
+		<figcaption>Local by Flywheel - https://local.getflywheel.com/</figcaption>
+	</figure>
+	<aside class="notes">
+		The primary tool in my dev is Local by Flywheel. Flywheel purchased the premium OS X tool from Pressmatic in December 2016. Ported it to Windows. I had previously used Desktopserver from ServerPress, and still use it for sites being developed for older PHP environments. I am able to run Local by Flywheel on a Surface Pro tablet running Windows 10 Pro with 8 GB RAM.
+	</aside>
+</section>
+
+<section data-state="two-col-wrapper">
+	<h3>Editor Preference - Visual Studio Code</h3><hr>
+	<div class='two-col-left'>
+	<img src="wordpress-on-windows-wcbalt/assets/images/vsc-front-page.png"/>
+</div>
+	<div class="two-col-right"> 
+	<ul>
+			<li>Free</li>
+			<li>Open Source</li>
+			<li>Runs Everywhere</li>
+
+		</ul>	 
+	</div>
+</section>
+
+<section data-state="two-col-wrapper">
+	<h3>FTP Client - Really?</h3><hr>
+	<div class='two-col-left'>
+		<img src="wordpress-on-windows-wcbalt/assets/images/capture-filezilla.png"/>
+	</div>
+	<div class="two-col-right"> 
+		<ul>
+			<li>Yes - I insist!</li>
+			<li>FileZilla - Just get it</li>
+			<li>No editing files using the dashboard editor</li>
+		</ul>	
+	</div>
+	<aside class="notes">
+			You need to learn to use this tool. There are lots of options for FTP clients. Commodity tool. Open source is good.
+			</aside>	
+</section>
+<section data-state="two-col-wrapper">
+	<h3>define('DISALLOW_FILE_EDIT',true);</h3><hr>
+	<div class='two-col-left'>
+		<figure>
+		<img src="wordpress-on-windows-wcbalt/assets/images/wordpress-admin-no-editing.png">
+		<figcaption>No Editing themes, plugins, or<br>any source from the admin dashboard.</figcaption>
+		</figure>
+	</div>
+	<div class="two-col-right"> 
+		Add to <br>wp-config.php<br> above the<br> /* That's all, stop editing! Happy blogging. */<br>line.
+	</div>
+	<aside class="notes">
+	Repeat after me - I will not edit files through the WordPress dashboard. I will edit them in my code editor and then save them to my website.
+	</aside>
+</section>
+
+
+<!-- <section data-external="wordpress-on-windows-wcbalt/wcbalt-lbf.html"> </section> -->
+
+<section data-state="two-col-wrapper">
+	<h2>Local By Flywheel (LBF)</h2><hr>
+	<div class='two-col-left'>
+	<figure>
+			<img src="wordpress-on-windows-wcbalt/assets/images/local_getflywheel_com.png">
+	</figure>
+</div>
+<div class="two-col-right"> 
+	<ul>
+		<li>Free Download</li>
+		<li>Quick Windows Install</li>
+		<li>Uses .NET, VirtualBox, Docker</li>
+	</ul>
+</div>
+	<aside class="notes">
+		470MB download. Don't do it here.
+		Extra apps are installed if not already present on your system. 
+	</aside>
+</section>
+<section data-state="two-col-wrapper">
+	<h2>Setup Local By Flywheel</h2><hr>
+	<div class='two-col-right'> 
+	<figure>
+	<img src="wordpress-on-windows-wcbalt/assets/images/vsc-setup-1.png" />
+	<figcaption>LBF Installer</figcaption>
+	</figure>
+	</div>
+	<div class="two-col-left">
+	<ul>
+		<li>Run Installer</li>
+		<li>.NET framework required</li>
+		<li>Visual Studio Code added to %PATH%</li>
+	</ul>
+	</div>
+	<aside class="notes">
+	Not going to go thorugh the LBF install. 
+	Its a typical Windows install.
+	Default install to c:\Users\{username}\Local Sites
+	</aside>
+</section>
+
+<section>
+	<h2>Creating A New WordPress Site with Local</h2><hr>
+	<ul>
+		<li>"Live" Demo</li>
+		<li>Build new site</li>
+		<li>See environemnt tools</li>
+		<li>Access WP Admin</li>
+		<li>See new site</li>
+	</ul>
+	<aside class="notes">
+	Instead of a live demo of building a new site. I have a quick video that goes through the process.
+	Add New Site - Near Real Time
+	Let's watch this quick video and continue on the back end
+	</aside>
+</section>
+
+
+<!-- <section data-background-video="wordpress-on-windows-wcbalt/assets/images/lbf-add-new-site.mp4" data-background-color="#000">
+</section> -->
+<section data-audio-text="Demo: Adding New Site on Local">
+		<h3>Demo: Adding New Site on Local</h3>
+		<p class="fragment">
+		<video preload="auto" data-audio-controls src="wordpress-on-windows-wcbalt/assets/images/lbf-add-new-site.mp4">
+		</video>
+		</p>					
+</section>
+
+<section >
+	<h3>WordPress on Windows</h3><hr>
+	<img src="wordpress-on-windows-wcbalt/assets/images/lbf-windows-folder-structure.png" />
+	<p>New WP Site folder structure on C:\</p>
+<aside class="notes">
+	Look a little closer at the setup on windows
+	Notice all familair WP folders in the APP folder
+	Easy access for local editing<br>
+wp-content with plugins, themes and uploads<br>
+Speaking of editing .... 
+</aside>
+</section>
+
+
+<!-- <section data-external="wordpress-on-windows-wcbalt/wcbalt-editor.html"> </section> -->
+
+<section>
+	<h3>Editor - Visual Studio Code</h3><hr>
+	<img src="wordpress-on-windows-wcbalt/assets/images/vsc-front-page.png"/>
+	<aside class="notes">
+		Next element is the editor.<br>
+		I've been using Visual Studio Code for almost a year now.<br>
+		Open source. Lots of extensions. Good community support. Monthly updates. 
+	</aside>
+</section>
+
+<section>
+	<h2>Code Editing / Development</h2><hr>
+	<ul>
+		<li>Right Click LBF Admin "Show Folder"</li>
+		<li>Open Local Project Folder VSC</li>
+		<li>Edit Source - PHP, CSS, JS</li>
+		<li>Create files/folders</li>
+		<li>Drag/drop files & folders</li>
+		<li>Intellisense - Code aware - syntax highlighting, auto-complete</li>
+	</ul>
+	<aside class="notes">VSC runs on Windows, Linux, and even macOS.
+		LBF - Right Click show Folder - Drill to <strong>Public</strong> folder 
+		VSC has nice set of extensions for PHP and WordPress
+		New versions each month
+	</aside>	
+</section>
+
+<section> 
+	<figure>
+		<img src="wordpress-on-windows-wcbalt/assets/images/vsc-setup-8.png"/>
+		<figcaption>This is what we're talking about</figcaption>
+	</figure>
+</section>
+
+<section>
+	<h3>VSC - Open website project folder</h3><hr>
+	<img src="wordpress-on-windows-wcbalt/assets/images/vsc-edit-project.png"/>
+	<aside class="notes">Pulling in the entire folder tree offers availability to access all files, even if you have no need to edit them. I find it very helpful when searching for WordPress hooks using the "find in open folders" search.
+	</aside>
+</section>
+
+<section>
+	<h3>VSC - Browse to theme folder</h3><hr>
+	<img src="wordpress-on-windows-wcbalt/assets/images/vsc-edit-functions.png"/>
+	<p>Complete file structure open for editing. </p>
+	<aside class="notes">
+			Edit any of the php, css or JS files in your project. create new directories and files. Build your entire customization layout right from the editor side panel.
+			Editing functison.php to add that perfect snippet you found online.
+			
+	</aside>
+</section>
+
+<section data-background-color="#73232F" data-background="wordpress-on-windows-wcbalt/assets/images/recycling_symbol.png">
+	<h2>Test Changes</h2><hr>
+	<ul>
+		<li>Edit & Save files</li>
+		<li>Browser Refresh</li>
+		<li>Repeat ad nauseam</li>
+	</ul>
+	<aside class="notes">
+			Beauty of local dev means no file transfers to remote host.
+			Editing live in your dev environment.
+			Refresh browser to see success. 
+			lather-rinse-repeat
+	</aside>
+</section>
+
+<!-- <section data-external="wordpress-on-windows-wcbalt/wcbalt-deployment.html"> </section> -->
+
+<section>
+	<h3>A Little Deployment Anyone?<br>Basic Assumptions</h3><hr>
+		<ul>
+			<li>New WordPress Installation Exists on Host</li>
+			<li>WP Migrate DB Pro Installed and Activated<br>on local and remote sites
+				<ul>
+					<li>Migrate DB Pro handles handshake</li>
+					<li>Authenticates connection</li>
+					<li>Uploads DB to staging / live server</li>
+					<li>Performs Search & Replace on db</li>
+				</ul></li>
+			<li>Upload wp-content folder via FTP</li>
+		</ul>
+		<aside class="notes">
+		Again, emphasis on "little"
+		Focusing on local environment
+		WP Migrate DB PRO makes my life better.
+		Free works. Must jump into phpMyAdmin to import db</aside>
+</section>
+<section > 
+		<figure>
+		<img src="wordpress-on-windows-wcbalt/assets/images/magic-waving-of-hands.gif"/>
+		<figcaption>Waving of Hands<br>Magic Deployment Happens</figcaption>
+		</figure>
+</section>
+				
+<section>
+	<h2>Deployment Magic with<br>WP Migrate DB</h2><hr>
+	<figure>
+	<img src="wordpress-on-windows-wcbalt/assets/images/local-mdp-newconfig.png"/>
+	<figcaption>Create New Migration Profile</figcaption>
+	</figure>
+	<aside class="notes">
+		WP Migrate DB and DB Pro work off profiles that you set up to control destination of deployment. By deployment I'm talking about moving your working site to a public serveer - production or staging.
+		Have a Production profile<br>
+		Have a staging profile
+	</aside>
+</section>
+	
+<section>
+	<hr>
+	<figure>
+	<img src="wordpress-on-windows-wcbalt/assets/images/local-mdp-enter-auth.png"/>
+	<figcaption>Push Local db to Password Protected Remote</figcaption>
+	</figure>
+	<aside class="notes">We want to push local db to remote server. Remote / staging or production site is currently PW protected so need to enter authentication for connection to succeed. We copy the URL & key from the DB Pro install on the remote.
+	</aside>
+</section>
+	
+<section>
+	<hr>
+	<figure>
+	<img src="wordpress-on-windows-wcbalt/assets/images/local-mdp-connect-complete.png"/>
+	<figcaption>Connect Successful. Search & Replace Set Automatically</figcaption>
+	</figure>
+	<aside class="notes">connection is complete. Authentication has been added. DB search & replace is shown. Find references to local dev and replace with remote/live site details.</aside>
+</section>
+	
+<section>
+	<hr>
+	<figure>
+	<img src="wordpress-on-windows-wcbalt/assets/images/migration-in-progress.png"/>
+	<figcaption>Migration in Progress</figcaption>
+	</figure>
+	<aside class="notes">Tables being migrated.</aside>
+</section>
+	
+<section>
+	<hr>
+	<figure>
+	<img src="wordpress-on-windows-wcbalt/assets/images/migration-push-complete.png"/>
+	<figcaption>Migration Completed</figcaption>
+	</figure>
+	<aside class="notes">WordPress database migrated<br>
+		no files have been migrated yet<br>
+		Use FTP to copy your local wp-content to remote
+	</aside>
+</section>
+	
+<section>
+	<h2>Dull FTP Upload of WP-CONTENT</h2><hr>
+	<ul>
+		<li>FileZilla</li>
+		<li>SFTP/FTP connection to remote site</li>
+		<li>Drag WP-CONTENT from local to remote</li>
+	</ul>
+	<p>Remainder of Git process<br>&nbsp;&nbsp;left as an exercise for the viewer ;-)</p>
+	<aside class="notes">The first upload will take some time, since plugins and media will be going.<br>
+		Lots of efficiences can be added to this<br>
+		remote install of plugins for speed<br>
+	 </aside>
+</section>
+	
+<section data-background-color="#73232F" data-background="wordpress-on-windows-wcbalt/assets/images/recycling_symbol.png">
+	<p>Sigh</p>
+	<p>Lather &middot; Rinse &middot; Repeat</p>
+	<aside class="notes">
+		Review with client<br>
+		revise locally<br>
+		deploy, repeat
+	</aside>
+</section>
+	
+	
+<!-- <section data-external="wordpress-on-windows-wcbalt/wcbalt-vc-git.html"> </section> -->
+
+<section>
+	<h2>Time For A Little Control</h2><hr>
+	<ul>
+		<li>Git Version Control</li>
+		<li>Create a local repository</li>
+		<li>Add your project folder</li>
+	</ul>
+	<p>Remainder of Git process<br>&nbsp;&nbsp;left as an exercise for the viewer after a quick "live" demo</p>
+	<aside class="notes">Emphasis on "little"<br>
+		Think of version control as insurance<br>
+		When, not if, you screw something up<br>
+		Even for one person teams, like me<br>
+	</aside>
+</section>
+
+<section>
+	<h2>Git Integrated with Visual Studio Code Demo</h2><hr>
+	<ul>
+		<li>Init repo from VSC</li>
+		<li>Stage all changes - all files</li>
+		<li>Use a .gitignore to limit files under control
+			<ul>
+				<li>Theme / Child theme</li>
+				<li>Custom plugins</li>
+			</ul>
+		</li>
+	</ul>
+	<aside class="notes">
+		Here again a pseudo live demo. Using Visual Studio Code I can get Version control initialized right inside the project. Here we open the project folder, inuitiate the Source Control command CTRL-SHFT-G, pick the folder and commit the new files. Use gitignore and remove the majority of the files. I usually add my child theme folder and any custom plugins into source control. 
+	</aside>
+</section>
+<!-- <section data-background-video="wordpress-on-windows-wcbalt/assets/images/wcbalt-lbf-git.mp4" data-background-color="#000"> -->
+<section data-audio-text="Demo Integrated Git with Visual Studio Code">
+	<h3>Demo: Git with Visual Studio Code</h3>
+	<p class="fragment">
+	<video preload="auto" data-audio-controls src="wordpress-on-windows-wcbalt/assets/images/wcbalt-lbf-git.mp4">
+	</video>
+	</p>					
+</section>
+
+
+<section data-background="#73232F">
+	<h2>Wrapping It Up</h2><hr>
+	<h3>You CAN setup a nice WordPress dev environemnt on Windows</h3>
+	<ul>
+		<li>Local Server: Local by Flywheel</li>
+		<li>Editor: Visual Studio Code</li>
+		<li>FTP Client: FileZilla</li>
+		<li>Source Control: Integrated Git</li>
+		<li>Deployment: WP Migrate DB / Pro</li>
+	</ul>
+	<audio data-autoplay src="wordpress-on-windows-wcbalt/assets/images/sounds-of-silence.mp3"></audio>
+	<p class="fragment" data-autoslide="5000"></p>
+	<aside class="notes">
+	You can do this, despite the sound of silence on this at many of our local WP events. 
+	To put it more specifically, the workflow include local development, full site local testing with smart editing tools, version control, easy file + db upload and finally deployment/upload to public interwebs
+	</aside>
+</section>
+
+		<!-- <section data-external="wordpress-on-windows-wcbalt/wcbalt-signoff.html"> </section> -->
+
+<section>
+	<h2>Lingering Thoughts</h2><hr>
+	<br>anyone?<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;anyone?
+	<aside class="notes">
+	. . . a little Ferris Bueller reference never hurts in closing
+	</aside>
+</section>
+
+<section data-state="two-col-wrapper">
+	<h2>Thanks!</h2><hr>
+	<div class='two-col-left'>
+	<img src="wordpress-on-windows-wcbalt/assets/images/CapWebSolutions_Logo_FINAL-600x313.jpg"/><br>
+	<!-- <img src="wordpress-on-windows-wcbalt/assets/images/TRANS-CapWebSolutions_Logo_NoCap-504x152.png"/> -->
+	</div>
+	<div class="two-col-right">
+	<br><h3>Matt Ryan</h3>
+	<p>matt@capwebsolutions.com<br>@MattRy</p>
+	<!-- <hr style="border-width:2px;"> -->
+	</div><br><br>
+	<hr style="clear:both;border-width:2px;">
+	<p>Q's ???</p>
+</section>	
+
+
+</div>
+</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+			controls: false,    // Display controls in the bottom right corner
+			audio: {
+		prefix: 'audio/', 	// audio files are stored in the "audio" folder
+		suffix: '.ogg',		// audio files have the ".ogg" ending
+		textToSpeechURL: null,  // the URL to the text to speech converter
+		defaultNotes: false, 	// use slide notes as default for the text to speech converter
+		defaultText: false, 	// use slide text as default for the text to speech converter
+		advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance 
+		autoplay: false,	// automatically start slideshow
+		defaultDuration: 5,	// default duration in seconds if no audio is available 
+		playerOpacity: 0.05,	// opacity value of audio player if unfocused
+		playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls 
+		startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+	},
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
+				{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			]
+		});
+		Reveal.configure({
+			keyboard: {
+				13: 'down', // go to the down slide when the ENTER key is pressed
+				32: null, // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+				40: 'next', // go to the next slide when the ENTER key is pressed
+			}
+		});
+	</script>
+</body>
+</html>

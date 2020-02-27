@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Windows WordPress Development</title>
+
+	<meta name="description" content="WP101 - WordPress Troubleshooting">
+	<meta name="author" content="Matt Ryan">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="wp101-ts-wcphilly17/assets/css/style.css">
+
+	<script src="https://use.fontawesome.com/4b806ac70e.js"></script>
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-0a-intro.html"> </section> -->
+		<section>
+				<h2>WP101 - WordPress Troubleshooting</h2><hr>
+				<aside class="notes">
+					Good day so far. How many have were just in the Maintenance session? Did you pick up some tips?
+					Backups are critical. Troubleshooting will rely on having backups. 
+				</aside>
+			</section>
+			 
+			<section>
+				<h2>Goals For Session</h2><hr>
+					How To Troubleshoot WordPress<br>
+					Basic WordPress Fixes & Tips<br>
+					Finding Professional Support<br>
+					The Happiness Bar
+				<aside class="notes">
+					One aspect of my day job is providing maintenance to wp site owners. I get a lot of really cool problems coming in and some more than others. 
+					We are going to talk about some common WP problems and how to find and fix them
+					Also talk about where to get outside help and the help availalbe here at wordcamp
+				</aside>
+			</section>
+			
+			<section>
+				<h2>This is What I Have in Mind</h2><hr>
+				<ul>
+					<li>Common WordPress Issues</li>
+					<li>Demos on Fixes</li>
+					<li>Support - Professional and then some</li>
+					<li>Open Up for Q & A</li>
+				</ul>
+				<aside class="notes"></aside>
+			</section>
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-0b-bio.html"> </section> -->
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-1-commonproblems.html"> </section> -->
+
+		<section>
+				<h2>Common WordPress Problems</h2><hr>
+				<ul>
+					<li>White Screen of Death</li>
+					<li>Error Establishing a Database Connection</li>
+					<li>Maintenance Mode Forever</li>
+					<li>Internal server error</li>
+					<li>Syntax Error in WordPress</li>
+				</ul>
+				<aside class="notes">
+			Here are a few of the most common issues with WP sites. How many of you have experienced these? We are going to talk about how to troubleshoot a few of these and get into some Q&A on others.
+				</aside>
+			</section>
+			
+			
+			<section data-state="two-col-wrapper">
+				<h3>White Screen of Death</h3><hr>
+				<div class="two-col-right" style="padding-top:10%;">
+					<ul>
+						<li>Memory Issues</li>
+						<li>Plugin / Theme Conflicts</li>
+					</ul>
+				</div>
+				<div class='two-col-left'>
+					<img src="wp101-ts-wcphilly17/assets/images/white-screen-of-death.jpg">
+				</div>
+				<aside class="notes"></aside>
+				</section>
+			
+			<section data-state="two-col-wrapper">
+				<h3>Error Establishing a Database Connection</h3><hr>
+				<div class="two-col-right">
+					<ul>
+						<li>Error talking to WP db</li>
+						<li>Login credentials</li>
+						<li>Db corrupt</li>
+						<li>MySQL issue on host</li>
+					</ul>
+				</div>
+				<div class='two-col-left'>
+					<img src="wp101-ts-wcphilly17/assets/images/db-connection-error.jpg">
+				</div>
+				<aside class="notes">
+					Check the wp-config.php file - verify db config is correct
+				</aside>
+			</section>
+			
+			<section data-state="two-col-wrapper">
+				<h3>Syntax Error in WordPress</h3><hr>
+				<div class="two-col-right">
+					<ul>
+						<li>Pasted Code Snippet</li>
+						<li>Need FTP to fix</li>
+						<li>Remove replace new code</li>
+					</ul>
+				</div>
+				<div class='two-col-left'>
+					<img src="wp101-ts-wcphilly17/assets/images/syntaxerror.png">
+				</div>
+				<aside class="notes">
+					Probably the result of a incorrectly pasted code snippet. Extra bracket, missing ;
+				</aside>
+			</section>
+					
+			<section data-state="two-col-wrapper">
+					<h3>HTTP 500 Internal Server Error</h3><hr>
+					<div class="two-col-right">
+						<ul>
+							<li>Not a WordPress issue</li>
+							<li>Corrupt .htaccess</li>
+							<li> . or PHP memory</li>
+							<li> . . or plugin conflict</li>
+							<li> . . . or . . . </li>
+						</ul>
+					</div>
+					<div class='two-col-left'>
+						<img src="wp101-ts-wcphilly17/assets/images/internalservererror.jpg">
+					</div>
+					<aside class="notes">
+						TS it by checking htaccess, deactivated all plugins, reuplaod WP core fileds, increase Php memory, check with hosting prvider about server error log entries
+					</aside>
+				</section>
+						
+	
+				
+
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-2-troubleshootwp.html"> </section> -->
+
+		<section>
+				<h2>Troubleshooting WordPress</h2><hr>
+				<ol>
+					<li>Disable all plugins</li>
+					<li>Re-enable plugins 1x1</li>
+					<li>Switch to default theme</li><hr>   
+					<li>Refresh permalinks</li>
+					<li>Check Site URL in Settings | General</li><hr>
+					<li>Refresh browser cache</li>
+					<li>Turn off caching plugins</li>		
+				</ol>
+				<aside class="notes">
+					Your first troubleshooting steps are these top three	
+				</aside>
+			</section>
+			
+			<section data-audio-text="Demo: Deactivate All Plugins">
+				<h3>Demo: Deactivate All Plugins</h3>
+				<p class="fragment">
+				<video preload="auto" data-audio-controls src="wp101-ts-wcphilly17/assets/images/renaming-plugins-folder.mp4">
+				</video>
+				</p>
+				<aside class="notes">
+					Plugin updates can create a site crash if there is a conflict. 
+					Maybe you don't know which plugin is the problem, or the site is whitescreened and you can't get into the dashboard.
+					How do you deactivate the plugins. 
+					FTP to the server. Browse to the root of the website, then to the wp-content folder.
+					This folder holds your themes, any plugins, uploaded media files and a host of other things specific to your website. 
+					Rename the plugins folder. Then log into your site and all the plugins are missing so your site is now accessible. 
+					Go back to FTP and rename the plugins folder back to the correct name. 
+					Go back to your dashboard, refresh the page, and all your pis are there - deactivated. Reactivate one by one until an error
+					occurs. Fix the error. Voiia. 	
+				</aside>					
+			</section>
+			
+			<section data-audio-text="Demo: Switch to Default Theme">
+					<h3>Demo: Switch to Default Theme</h3>
+					<p class="fragment">
+					<video preload="auto" data-audio-controls src="wp101-ts-wcphilly17/assets/images/change-to-default-theme.mp4">
+					</video>
+					</p>	
+					<aside class="notes">
+						Another TS option is to switch your theme. This is helpful if you determine it is not a plugin conflict, but the problem did come up after a plugin update. Maybe your theme is having a conflict with a plugin you installed. The plugin developer is most likely to ask you to try it with the default WP theme before going forward with PI troubleshooting.<br>recommend always keep current WP default theme installed/updated on site. Not activated, but installed. It is easy to switch over to the default theme.<br>Note: Its possbile that your sidebars, widgets and menus may appear lost after this type of change. It is dependent on the numbeer of widget areas and menus defined in each theme.<br>They are not deleted, just may need to be dragged back into place.	
+					</aside>				
+				</section>
+			
+			<section data-audio-text="Demo: Refresh Permalinks & Confirm Site URL">
+				<h3>Demo: Refresh Permalinks<br>Review Site URL</h3>
+				<p class="fragment">
+				<video preload="auto" data-audio-controls src="wp101-ts-wcphilly17/assets/images/settings-tweaks.mp4">
+				</video>
+				</p>	
+				<aside class="notes"> 
+					Occasioanlly your site will offer up 404 errors or act very strangely after you have made a change inthe dashboard. You know the page is there but why is it 404'ing. Depending on your permalinks setting, you may have to flush the rules to reset the links. 
+					Visit the Permalinks page in the Settings menu. You don't even need to save anything. Just visiting the page will cause the 
+					rewrite rules in your server to flush and bring back your pages. 
+					Another possibility is that the Site URL may have been accidently edited. Verify the correct settings. 				
+			</section>
+			
+			<section data-audio-text="Demo: Site Stuck at Maintenance Forever">
+				<h3>Demo: Site Stuck at Maintenance Forever</h3>
+				<p class="fragment">
+				<video preload="auto" data-audio-controls src="wp101-ts-wcphilly17/assets/images/maintenance-mode.mp4">
+				</video>
+				</p>	
+				<aside class="notes">
+					When WP is updating a pluign on core files, it creates a maintenance file in the root of your site. If something goes
+					wrong during the update process, the maintenance file may not get deleted and your site stays in 
+					maintenance mode. Use FTP to get into the server and delete the file. 
+					It won't hurt anything. 	
+				</aside>				
+			</section>
+
+			
+
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-3-basicfixestips.html"> </section> -->
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-4-professionalsupport.html"> </section> -->
+
+		<section data-state="two-col-wrapper">
+				<div class="two-col-right">
+					<h3 style="padding-top:50%;">Need More Help?</h3>
+					</div>
+					<div class="two-col-left"><img src="wp101-ts-wcphilly17/assets/images/eraser-help-me.jpg"></div>
+			</section>
+			
+			<section data-state="two-col-wrapper">
+				<h3>Finding Professional Support</h3><hr>
+				<div class='two-col-right' style="padding-top:25%;">
+					<a href="https://codex.wordpress.org/Troubleshooting" target="_blank">WordPress Codex on Troubleshooting</a>
+				</div>
+				<div class='two-col-left'>
+					<img src="wp101-ts-wcphilly17/assets/images/wcphilly-wordpress-codex-troubleshoot-top.png">
+				</figure>
+				</div>
+			  
+			</section>
+			
+			<section data-state="two-col-wrapper">
+				<h3>Finding Professional Support</h3><hr>
+				<div class='two-col-right' style="padding-top:25%;">
+				<a href="https://codex.wordpress.org/Finding_WordPress_Help" target="_blank">Finding WordPress<br>Help in Codex</a>
+				</div>
+				<div class='two-col-left'>
+					<img src="wp101-ts-wcphilly17/assets/images/wcphilly-wordpress-codex-finding-help.png"> 
+				</div>
+				<aside class="notes">
+						
+				</aside>
+			</section>
+			<section data-state="two-col-wrapper">
+					<h3>Finding Professional Support</h3><hr>
+					<div class="two-col-right" style="padding-top:10%;">
+					<a href="	http://www.wpbeginner.com/common-wordpress-errors-and-how-to-fix-them/" target="_blank">WP Beginner<br>Fixing Common Errors</a>
+					</div>
+					<div class='two-col-left'>
+						<img src="wp101-ts-wcphilly17/assets/images/wcphilly-wpbeginner-common.png">
+					</div>
+						
+					<aside class="notes">
+							
+					</aside>
+				</section>
+			<section>
+				<h3>Finding Professional Support</h3><h4>Local Meetups</h4><hr>
+				<ul>
+					<li><a href="https://www.meetup.com/philly-burbs-wordpress-meetup/" target="_blank">Philly 'Burbs WordPress</a> - 2nd Mon</li>
+					<li><a href="https://www.meetup.com/Philadelphia-WordPress-Meetup-Group/"  target="_blank">Philadelphia WordPress</a> - 3rd Thu</li>
+					<li><a href="https://www.meetup.com/WordPress-Lancaster/" target="_blank">WordPress Lancaster</a> - 3rd Thu</li>
+					<li><a href="https://www.meetup.com/Lehigh-Valley-WordPress-Meetup/" target="_blank">Lehigh Valley WordPress</a> - 2nd Thu</li>
+					<li><a href="https://www.meetup.com/Reading-WordPress-Meetup/" target="_blank">Reading WordPress</a> - 3rd Tue</li>
+				</ul>
+				<aside class="notes">
+				5 local WP meetup within 90 mins of here
+				meetup.com and search for wordpress		
+				</aside>
+			</section>
+			<section>
+				<h2>Finding Professional Support</h2><hr>
+				<li>Facebook Groups</li>
+				<li>LinkedIn Groups</li>
+				<aside class="notes">
+						
+				</aside>
+			</section>
+
+
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-5-thehappinessbar.html"> </section> -->
+
+		<section data-state="two-col-wrapper">
+				<h3>The Happiness Bar - Huh?!?!</h3><hr>
+				<div class="two-col-left" >
+					<img src="wp101-ts-wcphilly17/assets/images/happiness-bar-wcphilly-2015.jpg"> 
+				</div>
+				<div class="two-col-right" style="padding-top:10%;">
+					<ul>
+						<li>Think Help Desk</li>
+						<li>Staffed by Volunteers</li>
+						<li>Troubleshoot Problems</li>
+						<li>Answer Questions</li>
+						<Li>Judgement-Free Zone</Li>
+					</ul>
+				</div>
+				<aside class="notes">
+					Hopefully you have seen, or heard references to THB today, but may have asked What is it?
+					I know at my first WC I had no idea what it was? It's a good place, a safe place, a happy place for WordPress'ers.
+				</aside>
+			</section>
+			
+			
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-6-resources.html"> </section> -->
+
+		<section data-state="small-li">
+				<h3>Resources Noted</h3><hr>
+				<ul class="resources li smaller">
+					<li>codex.wordpress.org/Troubleshooting</li>
+					<li>codex.wordpress.org/Finding_WordPress_Help</li>
+					<li>www.wpbeginner.com/common-wordpress-errors-and-how-to-fix-them</li>
+					<li>www.wpbeginner.com/wp-tutorials/how-to-fix-the-wordpress-white-screen-of-death</li>
+					<li>www.wpbeginner.com/beginners-guide/beginners-guide-to-troubleshooting-wordpress-errors-step-by-step </li>
+					<li>wordpress.org/support</li>
+				</ul>
+				<aside class="notes">
+				Here's a listing of the resources I've noted throughout the demo today.		
+				</aside>
+			</section>
+			
+			<section data-state="small-li">
+				<h3>More Resources Noted</h3><hr>
+				<ul class="resources li smaller">
+					<li>meetup.com/philly-burbs-wordpress-meetup/</li>
+					<li>meetup.com/Philadelphia-WordPress-Meetup-Group/</li>
+					<li>meetup.com/WordPress-Lancaster/</li>
+					<li>meetup.com/Lehigh-Valley-WordPress-Meetup/</li>
+					<li>meetup.com/Reading-WordPress-Meetup/</li>
+				</ul>
+				<aside class="notes">
+						Here's a few more. 
+				</aside>
+			</section>
+			
+			
+		<!-- <section data-external="wp101-ts-wcphilly17/wcphilly-9-signoff.html"> </section> -->
+
+		<section data-state="two-col-wrapper">
+				<h2>Thanks!</h2><hr>
+				<div class='two-col-left'>
+				<img style="border: none;" src="wp101-ts-wcphilly17/assets/images/capwebsolutions_logo_final-600x313.jpg" width="400"/><br>
+				</div>
+				<div class="two-col-right smaller">
+					<br><p>Matt Ryan<br><br>
+					<i class="fa fa-envelope" aria-hidden="true"></i> matt@capwebsolutions.com<br>
+					<i class="fa fa-twitter" aria-hidden="true"></i> @MattRy
+					<!-- <hr style="border-width:2px;"> -->
+				</div>
+				<br><br>
+				<hr style="clear:both;border-width:2px;">
+				<p>Q's ???</p>
+				<p>Slides: <a href="//capwebsolutions.com/go/wcphilly2017">capwebsolutions.com/go/wcphilly2017</a></p>
+			</section>	
+			
+			
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+	// More info https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		history: true,
+		controls: true, 
+		center: true,
+		progress: true,
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+		audio: {
+		prefix: 'audio/', 	// audio files are stored in the "audio" folder
+		suffix: '.ogg',		// audio files have the ".ogg" ending
+		textToSpeechURL: null,  // the URL to the text to speech converter
+		defaultNotes: false, 	// use slide notes as default for the text to speech converter
+		defaultText: false, 	// use slide text as default for the text to speech converter
+		advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance 
+		autoplay: false,	// automatically start slideshow
+		defaultDuration: 5,	// default duration in seconds if no audio is available 
+		playerOpacity: 0.05,	// opacity value of audio player if unfocused
+		playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls 
+		startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+	},
+		dependencies: [
+			{ src: 'plugin/markdown/marked.js' },
+			{ src: 'plugin/markdown/markdown.js' },
+			{ src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/reveal_external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } },
+			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+		]
+	});
+	Reveal.configure({
+			keyboard: {
+				13: 'down', // go to the down slide when the ENTER key is pressed
+				32: null, // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+				40: 'next', // go to the next slide when the ENTER key is pressed
+			}
+		});
+</script>
+</body>
+</html>

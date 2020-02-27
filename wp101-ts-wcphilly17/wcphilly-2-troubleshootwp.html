@@ -1,0 +1,72 @@
+<section>
+	<h2>Troubleshooting WordPress</h2><hr>
+	<ol>
+		<li>Disable all plugins</li>
+		<li>Re-enable plugins 1x1</li>
+		<li>Switch to default theme</li><hr>   
+		<li>Refresh permalinks</li>
+		<li>Check Site URL in Settings | General</li><hr>
+		<li>Refresh browser cache</li>
+		<li>Turn off caching plugins</li>		
+	</ol>
+	<aside class="notes">
+		Your first troubleshooting steps are these top three	
+	</aside>
+</section>
+
+<section data-audio-text="Demo: Deactivate All Plugins">
+	<h3>Demo: Deactivate All Plugins</h3>
+	<p class="fragment">
+	<video preload="auto" data-audio-controls src="wp101-ts-wcphilly17/assets/images/renaming-plugins-folder.mp4">
+	</video>
+	</p>
+	<aside class="notes">
+		Plugin updates can create a site crash if there is a conflict. 
+		Maybe you don't know which plugin is the problem, or the site is whitescreened and you can't get into the dashboard.
+		How do you deactivate the plugins. 
+		FTP to the server. Browse to the root of the website, then to the wp-content folder.
+		This folder holds your themes, any plugins, uploaded media files and a host of other things specific to your website. 
+		Rename the plugins folder. Then log into your site and all the plugins are missing so your site is now accessible. 
+		Go back to FTP and rename the plugins folder back to the correct name. 
+		Go back to your dashboard, refresh the page, and all your pis are there - deactivated. Reactivate one by one until an error
+		occurs. Fix the error. Voiia. 	
+	</aside>					
+</section>
+
+<section data-audio-text="Demo: Switch to Default Theme">
+		<h3>Demo: Switch to Default Theme</h3>
+		<p class="fragment">
+		<video preload="auto" data-audio-controls src="wp101-ts-wcphilly17/assets/images/change-to-default-theme.mp4">
+		</video>
+		</p>	
+		<aside class="notes">
+			Another TS option is to switch your theme. This is helpful if you determine it is not a plugin conflict, but the problem did come up after a plugin update. Maybe your theme is having a conflict with a plugin you installed. The plugin developer is most likely to ask you to try it with the default WP theme before going forward with PI troubleshooting.<br>recommend always keep current WP default theme installed/updated on site. Not activated, but installed. It is easy to switch over to the default theme.<br>Note: Its possbile that your sidebars, widgets and menus may appear lost after this type of change. It is dependent on the numbeer of widget areas and menus defined in each theme.<br>They are not deleted, just may need to be dragged back into place.	
+		</aside>				
+	</section>
+
+<section data-audio-text="Demo: Refresh Permalinks & Confirm Site URL">
+	<h3>Demo: Refresh Permalinks<br>Review Site URL</h3>
+	<p class="fragment">
+	<video preload="auto" data-audio-controls src="wp101-ts-wcphilly17/assets/images/settings-tweaks.mp4">
+	</video>
+	</p>	
+	<aside class="notes"> 
+		Occasioanlly your site will offer up 404 errors or act very strangely after you have made a change inthe dashboard. You know the page is there but why is it 404'ing. Depending on your permalinks setting, you may have to flush the rules to reset the links. 
+		Visit the Permalinks page in the Settings menu. You don't even need to save anything. Just visiting the page will cause the 
+		rewrite rules in your server to flush and bring back your pages. 
+		Another possibility is that the Site URL may have been accidently edited. Verify the correct settings. 				
+</section>
+
+<section data-audio-text="Demo: Site Stuck at Maintenance Forever">
+	<h3>Demo: Site Stuck at Maintenance Forever</h3>
+	<p class="fragment">
+	<video preload="auto" data-audio-controls src="wp101-ts-wcphilly17/assets/images/maintenance-mode.mp4">
+	</video>
+	</p>	
+	<aside class="notes">
+		When WP is updating a pluign on core files, it creates a maintenance file in the root of your site. If something goes
+		wrong during the update process, the maintenance file may not get deleted and your site stays in 
+		maintenance mode. Use FTP to get into the server and delete the file. 
+		It won't hurt anything. 	
+	</aside>				
+</section>

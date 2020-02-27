@@ -1,0 +1,31 @@
+html.intro h1,
+html.intro h2,
+html.intro h3 {
+	color:#000;
+}
+body {
+	background-color: #73232F;
+}
+
+.two-col-wrapper .two-col-left {
+	float: left;
+	width: 60%;
+  }
+  
+.two-col-wrapper .two-col-right {
+	float: right;
+	width: 40%;
+  }
+.two-col-wrapper .smaller,
+.smaller {
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+.small-ul ul,
+.small-li li {
+	font-size: smaller;
+}
+.resources li {
+	padding-bottom: 5px;
+}
